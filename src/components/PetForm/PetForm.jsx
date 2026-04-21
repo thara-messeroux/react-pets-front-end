@@ -10,7 +10,7 @@ const PetForm = (props) => {
     image: "",
   };
 
-  // if editing, preload the chosen pet
+  // if editing, preload chosen pet
   const [formData, setFormData] = useState(
     props.selected ? props.selected : initialState,
   );
@@ -20,7 +20,7 @@ const PetForm = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
 
-  // send form data up to App
+  // send form up to App
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
@@ -29,39 +29,61 @@ const PetForm = (props) => {
     } else {
       props.handleAddPet(formData);
     }
+
+    // reset form after submit
+    setFormData(initialState);
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Pet Name: </label>
+        <label htmlFor="name">Name </label>
         <input
-          type="text"
-          name="name"
           id="name"
+          name="name"
           value={formData.name}
           onChange={handleChange}
           required
         />
 
-        <label htmlFor="age">Pet Age: </label>
+        <label htmlFor="type">Select Type </label>
+        <select
+          id="type"
+          name="type"
+          value={formData.type}
+          onChange={handleChange}
+        >
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Rabbit">Rabbit</option>
+          <option value="Fish">Fish</option>
+        </select>
+
+        <label htmlFor="age">Age </label>
         <input
-          type="number"
-          name="age"
           id="age"
+          name="age"
+          type="number"
           value={formData.age}
           onChange={handleChange}
           required
         />
 
-        <label htmlFor="breed">Breed: </label>
+        <label htmlFor="breed">Breed </label>
         <input
-          type="text"
-          name="breed"
           id="breed"
+          name="breed"
           value={formData.breed}
           onChange={handleChange}
           required
+        />
+
+        <label htmlFor="image">Image </label>
+        <input
+          id="image"
+          name="image"
+          value={formData.image}
+          onChange={handleChange}
         />
 
         <button type="submit">

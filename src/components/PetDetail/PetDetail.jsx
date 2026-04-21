@@ -12,12 +12,20 @@ const PetDetail = (props) => {
     );
   }
 
+  // make the date look nicer
+  const prettyDate = new Date(props.selected.createdAt).toLocaleDateString();
+
   // show chosen pet
   return (
     <div>
-      <h1>{props.selected.name}</h1>
+      <h1>
+        {props.selected.name} - {props.selected.age} years old
+      </h1>
+      <h2>Type: {props.selected.type}</h2>
       <h2>Breed: {props.selected.breed}</h2>
-      <p>Age: {props.selected.age} year(s) old</p>
+      <p>Date Added: {prettyDate}</p>
+
+      <img src={props.selected.image} alt={props.selected.name} width="250" />
 
       <div>
         <button onClick={() => props.handleFormView(props.selected)}>

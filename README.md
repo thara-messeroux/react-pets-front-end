@@ -154,3 +154,20 @@ It connects to a back-end API and lets users view pet data in the browser. The a
 - `State Management` → update the UI after server actions
 - `Forms` → submit controlled form data
 - `Separation of Concerns` → keep fetch logic in the service file
+
+---
+
+## Step 9 ✨
+- Added a `type` dropdown to the pet form
+- Added an `image` field to the pet form
+- Displayed each pet’s image in the detail view
+- Formatted the `createdAt` timestamp into a readable date
+
+### Why it matters
+- This makes the app feel more complete and realistic
+- It improves data quality and visual feedback for the user
+
+### Engineering principle used
+- `Controlled Forms` → manage text fields and dropdowns in React state
+- `Data Formatting` → turn raw timestamps into readable dates
+- `User Experience` → show images and cleaner details in the UI

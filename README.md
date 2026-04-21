@@ -46,3 +46,23 @@ It connects to a back-end API and will let users view, create, update, and delet
 ### Engineering principle used
 - `Project Setup` → prepare the app before building features
 - `Developer Experience` → reduce noise and keep the workflow clean# react-pets-front-end
+
+---
+
+## Step 3 🐶
+- Created the `components` and `services` folders
+- Added `src/services/petService.js`
+- Added a front-end `.env` file
+- Stored the back-end URL in `VITE_BACK_END_SERVER_URL`
+
+### Why it matters
+- This keeps the project organized
+- It separates UI code from API call logic
+- It avoids hard-coding the server URL in the app
+
+### Engineering principle used
+- `Project Structure` → organize files by responsibility
+- `Environment Variables` → keep configuration flexible
+- `Separation of Concerns` → keep service logic separate from components
+
+---

@@ -1,25 +1,39 @@
-// src/components/PetForm/PetForm.jsx
-// This component will be responsible for displaying a form to add a new pet.
 import { useState } from "react";
 
 const PetForm = (props) => {
-  // form box
-  const [formData, setFormData] = useState({
+  // starter form shape
+  const initialState = {
     name: "",
     age: "",
     breed: "",
-  });
+    type: "Dog",
+    image: "",
+  };
 
-  // update typed values
-  // this is a common pattern for handling form input changes in React
+  // if editing, preload the chosen pet
+  const [formData, setFormData] = useState(
+    props.selected ? props.selected : initialState,
+  );
+
+  // update form as user types
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value });
   };
 
-  // submit form data to the server
+  // send form data up to App
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+
+    if (props.selected) {
+      props.handleUpdatePet(formData, props.selected._id);
+    } else {
+      props.handleAddPet(formData);
+    }
+  };
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">Pet Name: </label>
         <input
           type="text"
@@ -30,7 +44,6 @@ const PetForm = (props) => {
           required
         />
 
-        // age input
         <label htmlFor="age">Pet Age: </label>
         <input
           type="number"
@@ -41,7 +54,6 @@ const PetForm = (props) => {
           required
         />
 
-        // breed input
         <label htmlFor="breed">Breed: </label>
         <input
           type="text"
@@ -52,8 +64,9 @@ const PetForm = (props) => {
           required
         />
 
-        // submit button
-        <button type="submit">Add New Pet</button>
+        <button type="submit">
+          {props.selected ? "Update Pet" : "Add New Pet"}
+        </button>
       </form>
     </div>
   );

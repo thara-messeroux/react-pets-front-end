@@ -135,3 +135,22 @@ It connects to a back-end API and lets users view pet data in the browser. The a
 - `State` → track whether the form is open
 - `Conditional Rendering` → show either the form or the detail view
 - `Event Handling` → button toggles the form
+
+---
+
+## Step 8 🚀
+- Connected create, update, and delete actions to the back-end API
+- Added form submission with `preventDefault()`
+- Added create, update, and delete service functions
+- Added edit and delete buttons in the detail view
+- Updated React state after each CRUD action
+
+### Why it matters
+- This completes the full front-end CRUD flow
+- The UI now stays in sync with the database
+
+### Engineering principle used
+- `CRUD` → create, read, update, delete from the front end
+- `State Management` → update the UI after server actions
+- `Forms` → submit controlled form data
+- `Separation of Concerns` → keep fetch logic in the service file

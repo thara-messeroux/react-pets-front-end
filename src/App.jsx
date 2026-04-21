@@ -2,26 +2,24 @@
 
 import { useState, useEffect } from "react";
 import * as petService from "./services/petService";
+import PetList from "./components/PetList/PetList";
 
+// This component will be responsible for fetching the list of pets and passing it down to the PetList component.
 const App = () => {
-  // holds all pets
+  // app state
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    // load pets when page opens
+    // load pets on first page load
     const fetchPets = async () => {
       const fetchedPets = await petService.index();
-
-      // quick test: did the API send pets back?
-      console.log(fetchedPets);
-
       setPets(fetchedPets);
     };
 
     fetchPets();
   }, []);
 
-  return <h1>Hello world!</h1>;
+  return <PetList pets={pets} />;
 };
 
 export default App;

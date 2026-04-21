@@ -81,3 +81,20 @@ It connects to a back-end API and lets users view pet data in the browser. The a
 - `Separation of Concerns` → keep API calls in a service file
 - `useEffect` → load data when the page opens
 - `Environment Variables` → keep the API URL flexible
+
+---
+
+## Step 5 🐼
+- Created the `PetList` component
+- Passed the `pets` state from `App.jsx` into `PetList`
+- Rendered pet names using `.map()`
+- Added a fallback message when there are no pets
+
+### Why it matters
+- This is the first real UI for the pets data
+- It turns fetched API data into something visible in the browser
+
+### Engineering principle used
+- `Props` → pass data from parent to child
+- `Conditional Rendering` → show different UI when the list is empty
+- `List Rendering` → use `.map()` to display many items

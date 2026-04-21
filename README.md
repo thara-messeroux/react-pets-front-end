@@ -116,3 +116,22 @@ It connects to a back-end API and lets users view pet data in the browser. The a
 - `Props` → pass the selected pet between components
 - `Event Handling` → respond to user clicks
 - `Conditional Rendering` → show details only when a pet is selected
+
+---
+
+## Step 7 🐻
+- Created the `PetForm` component
+- Added controlled form inputs for `name`, `age`, and `breed`
+- Added an `isFormOpen` state in `App.jsx`
+- Added a button in `PetList` to open and close the form
+- Used conditional rendering to switch between the form and pet details
+
+### Why it matters
+- This creates the UI shell for adding a new pet
+- It prepares the app for form submission in the next step
+
+### Engineering principle used
+- `Controlled Components` → React controls form input values
+- `State` → track whether the form is open
+- `Conditional Rendering` → show either the form or the detail view
+- `Event Handling` → button toggles the form

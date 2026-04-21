@@ -5,13 +5,15 @@ const PetList = (props) => {
     <div>
       <h1>Pet List</h1>
 
-        {/* if there are pets, display them, otherwise show a message */}
+      {/* if there are pets, display them, otherwise show a message */}
       <div>
         {props.pets.length ? (
           <ul>
             {props.pets.map((pet) => (
               <li
                 key={pet._id}
+                
+                // make pet names feel clickable
                 style={{ cursor: "pointer", color: "#8BA6FF" }}
                 onClick={() => props.handleSelect(pet)}
               >

@@ -3,7 +3,7 @@
 ## Intro
 This project is a React front-end for a pets dashboard.
 
-It connects to a back-end API and will let users view, create, update, and delete pets in the browser.
+It connects to a back-end API and lets users view pet data in the browser. The app will also support creating, updating, and deleting pets.
 
 ## Concepts Practiced
 - `React`
@@ -45,7 +45,7 @@ It connects to a back-end API and will let users view, create, update, and delet
 
 ### Engineering principle used
 - `Project Setup` → prepare the app before building features
-- `Developer Experience` → reduce noise and keep the workflow clean# react-pets-front-end
+- `Developer Experience` → reduce noise and keep the workflow clean
 
 ---
 
@@ -66,3 +66,18 @@ It connects to a back-end API and will let users view, create, update, and delet
 - `Separation of Concerns` → keep service logic separate from components
 
 ---
+
+## Step 4 🐱
+- Built `src/services/petService.js`
+- Added a `BASE_URL` using the front-end environment variable
+- Added an `index()` function to fetch all pets from the API
+- Connected `App.jsx` to the service using `useEffect`
+
+### Why it matters
+- This lets the React app talk to the back end
+- It starts the data flow for showing pets in the UI
+
+### Engineering principle used
+- `Separation of Concerns` → keep API calls in a service file
+- `useEffect` → load data when the page opens
+- `Environment Variables` → keep the API URL flexible

@@ -98,3 +98,21 @@ It connects to a back-end API and lets users view pet data in the browser. The a
 - `Props` → pass data from parent to child
 - `Conditional Rendering` → show different UI when the list is empty
 - `List Rendering` → use `.map()` to display many items
+
+---
+
+## Step 6 🐸
+- Created the `PetDetail` component
+- Added a `selected` state in `App.jsx`
+- Made pet names clickable in `PetList`
+- Passed the clicked pet into `PetDetail`
+
+### Why it matters
+- This lets the user view one pet’s details
+- It adds interaction to the dashboard
+
+### Engineering principle used
+- `State` → store the selected pet
+- `Props` → pass the selected pet between components
+- `Event Handling` → respond to user clicks
+- `Conditional Rendering` → show details only when a pet is selected

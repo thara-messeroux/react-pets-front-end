@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import * as petService from "./services/petService";
 import PetList from "./components/PetList/PetList";
+import PetDetail from "./components/PetDetail/PetDetail";
 
-// This component will be responsible for fetching the list of pets and passing it down to the PetList component.
 const App = () => {
-  // app state
+  // all pets
   const [pets, setPets] = useState([]);
+  // one selected pet
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     // load pets on first page load
@@ -19,7 +21,19 @@ const App = () => {
     fetchPets();
   }, []);
 
-  return <PetList pets={pets} />;
+  // save clicked pet into state
+  const handleSelect = (pet) => {
+    setSelected(pet);
+  };
+
+  // render the list and the details
+
+  return (
+    <>
+      <PetList pets={pets} handleSelect={handleSelect} />
+      <PetDetail selected={selected} />
+    </>
+  );
 };
 
 export default App;
